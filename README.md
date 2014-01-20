@@ -12,59 +12,62 @@ npm install testr
 ```
 var testr = require('testr');
 
-var objToValidate = {
-  strTest: '',
-  arrTest: [],
-  objTest: {},
-  boolTest: true
-};
-var validationObject = {
-  strTest: {
-    '_isType': 'String'
-  },
-  arrTest: {
-    '_isType': 'Array'
-  },
-  objTest: {
-    '_isType': 'Object'
-  },
-  boolTest: {
-    '_isType': 'Boolean'
-  }
-};
-var result = testr.validate(objToValidate, validationObject);
+var objToValidate = 'hello world';
+var result = testr.validate(objToValidate, {_startsWith: 'hello'});
 ```
 
-the resulting object will look like this:
+and the result is:
 ```
 {
-  'strTest': {
-    'actualValue': '',
-    '_isType': {
-      'validationValue': 'String',
-      'passed': true
-    }
-  },
-  'arrTest': {
-    'actualValue': [],
-    '_isType': {
-      'validationValue': 'Array',
-      'passed': true
-    }
-  },
-  'objTest': {
-    'actualValue': {},
-    '_isType': {
-      'validationValue': 'Object',
-      'passed': true
-    }
-  },
-  'boolTest': {
-    'actualValue': true,
-    '_isType': {
-      'validationValue': 'Boolean',
-      'passed': true
-    }
+  actualValue: 'hello world',
+  _startsWith: {
+    passed: true,
+    validationValue: 'hello'
   }
 }
 ```
+
+## Validators
+
+All validators begin with an underscore by default. You can override this by calling testr.configure with a configuration object argument like so:
+
+```
+testr.configure({validationPrefix: '$'});
+```
+
+validator functions are below:
+
+```
+  _exists
+  _isType
+  _startsWith
+  _contains
+  _lessThan
+  _greaterThan
+  _equals
+  _matchesRegexPattern
+  _arrayContains
+  _arrayContainsObjectWithProperties
+  _validateArrayObjectElement
+```
+
+example usage is in the test directory for now
+
+## Custom Validators
+
+Additionally you can provide custom validation functions by calling testr.configure with a configuration object argument like so:
+
+```
+testr.configure({
+  customValidators: {
+    isBlue: function(valueToCheck, whetherOrNotItShouldBeBlue) {
+      var result = {};
+      result.passed = ((valueToCheck === 'blue') === whetherOrNotItShouldBeBlue);
+      result.validationValue = whetherOrNotItShouldBeBlue;
+      return result;
+    }
+  }
+});
+```
+
+## Contributions are welcome
