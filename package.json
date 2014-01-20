@@ -1,6 +1,6 @@
 {
   "name": "testr",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "An object testing package for Node.js",
   "main": "lib/testr.js",
   "directories": {
@@ -15,6 +15,10 @@
     "object"
   ],
   "author": "Justin Vallelonga",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jlvallelonga/testr.git"
+  },
   "license": "BSD-2-Clause",
   "dependencies": {
     "underscore": "~1.5.2"
