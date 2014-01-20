@@ -14,9 +14,9 @@ describe('testr', function() {
       assert.equal(actual, expected);
     });
     it('should recognize a non-default prefix', function() {
-      testr.configure({validationPrefix: '-'});
+      testr.configure({validationPrefix: '$'});
       var expected = true;
-      var actual = testr.isValidationProperty('-startsWith');
+      var actual = testr.isValidationProperty('$startsWith');
       assert.equal(actual, expected);
     });
     it('should recognize a multi-character prefix', function() {
@@ -125,7 +125,7 @@ describe('testr', function() {
             result.passed = ((valueToCheck === 'blue') === whetherOrNotItShouldBeBlue);
             result.validationValue = whetherOrNotItShouldBeBlue;
             return result;
-          },
+          }
         }
       });
       var validationObject = {
