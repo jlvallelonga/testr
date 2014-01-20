@@ -1,17 +1,13 @@
-testr
-=====
+# testr
 
 generic object testing for node.js
 
-
-Install
-=================================
+## Install
 ```
 npm install testr
 ```
 
-Usage
-=================================
+## Usage
 
 ```
 var testr = require('testr');
