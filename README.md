@@ -42,33 +42,33 @@ var result = testr.validate(objToValidate, validationObject);
 the resulting object will look like this:
 ```
 {
-'strTest': {
-  'actualValue': '',
-  '_isType': {
-    'validationValue': 'String',
-    'passed': true
+  'strTest': {
+    'actualValue': '',
+    '_isType': {
+      'validationValue': 'String',
+      'passed': true
+    }
+  },
+  'arrTest': {
+    'actualValue': [],
+    '_isType': {
+      'validationValue': 'Array',
+      'passed': true
+    }
+  },
+  'objTest': {
+    'actualValue': {},
+    '_isType': {
+      'validationValue': 'Object',
+      'passed': true
+    }
+  },
+  'boolTest': {
+    'actualValue': true,
+    '_isType': {
+      'validationValue': 'Boolean',
+      'passed': true
+    }
   }
-},
-'arrTest': {
-  'actualValue': [],
-  '_isType': {
-    'validationValue': 'Array',
-    'passed': true
-  }
-},
-'objTest': {
-  'actualValue': {},
-  '_isType': {
-    'validationValue': 'Object',
-    'passed': true
-  }
-},
-'boolTest': {
-  'actualValue': true,
-  '_isType': {
-    'validationValue': 'Boolean',
-    'passed': true
-  }
-}
 }
 ```
