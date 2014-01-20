@@ -1,8 +1,6 @@
 var testr = require('../lib/testr');
 var assert = require('assert');
 
-var eyes = require('eyes');
-
 describe('testr', function() {
   beforeEach(function() {
     testr.configure();//reset defaults
