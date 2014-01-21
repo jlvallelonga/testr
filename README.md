@@ -1,6 +1,6 @@
 # testr
 
-generic object testing for node.js
+A generic object testing package for Node.js
 
 ## Install
 ```

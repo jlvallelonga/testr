@@ -1,7 +1,7 @@
 {
   "name": "testr",
-  "version": "0.0.3",
-  "description": "An object testing package for Node.js",
+  "version": "0.0.4",
+  "description": "A generic object testing package for Node.js",
   "main": "lib/testr.js",
   "directories": {
     "test": "tests"
@@ -10,9 +10,24 @@
     "test": "mocha"
   },
   "keywords": [
+    "testr",
+    "tester",
     "test",
+    "tests",
     "testing",
-    "object"
+    "unit",
+    "generic",
+    "json",
+    "validate",
+    "validator",
+    "validation",
+    "dictionary",
+    "javascript",
+    "object",
+    "starts",
+    "exists",
+    "array",
+    "contains"
   ],
   "author": "Justin Vallelonga",
   "repository": {
@@ -22,5 +37,8 @@
   "license": "BSD-2-Clause",
   "dependencies": {
     "underscore": "~1.5.2"
+  },
+  "devDependencies": {
+    "mocha": "*"
   }
 }
