@@ -153,6 +153,7 @@ result:
     ]
 }
 ```
+### arrayContainsObjectWithProperties
 The following examples reference this array:
 ```
 var testArray = [
@@ -173,7 +174,6 @@ var testArray = [
   }
 ];
 ```
-### arrayContainsObjectWithProperties
 ```
 var result = testr.validate(testArray, {_arrayContainsObjectWithProperties: {name: 'testr'}});
 ```
