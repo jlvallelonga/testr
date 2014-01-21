@@ -312,9 +312,6 @@ result:
 }
 ```
 
-
-example usage is in the test directory for now
-
 ## Custom Validators
 
 Additionally you can provide custom validation functions by calling testr.configure with a configuration object argument like so:
