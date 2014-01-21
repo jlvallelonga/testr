@@ -245,6 +245,58 @@ describe('testr', function() {
       };
       assert.deepEqual(actual, expected);
     });
+    it('should allow array input to arrayContainsObjectWithProperties', function() {
+      var objToValidate = [
+        {
+          name: 'justin'
+        },
+        {
+          name: 'billy-bob'
+        },
+        {
+          name: 'the ugly one'
+        }
+      ];
+      var validationObject = {
+        '_arrayContainsObjectWithProperties': [
+          {
+            'name': 'justin'
+          },
+          {
+            'name': 'billy-bob'
+          }
+        ]
+      };
+      var actual = testr.validate(objToValidate, validationObject);
+      var expected = {
+        actualValue: [
+          {
+            name: 'justin'
+          },
+          {
+            name: 'billy-bob'
+          },
+          {
+            name: 'the ugly one'
+          }
+        ],
+        _arrayContainsObjectWithProperties: [
+          {
+            validationValue: {
+              'name': 'justin'
+            },
+            'passed': true
+          },
+          {
+            validationValue: {
+              'name': 'billy-bob'
+            },
+            'passed': true
+          }
+        ]
+      };
+      assert.deepEqual(actual, expected);
+    });
     it('should validate an object', function() {
       var objToValidate = {
         name: 'justin'
