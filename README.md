@@ -37,18 +37,30 @@ testr.configure({validationPrefix: '$'});
 
 validator functions are below:
 
+
+### _exists
 ```
-  _exists
-  _isType
-  _startsWith
-  _contains
-  _lessThan
-  _greaterThan
-  _equals
-  _matchesRegexPattern
-  _arrayContains
-  _arrayContainsObjectWithProperties
-  _validateArrayObjectElement
+var result = testr.validate({name: 'testr'}, {name: {'_exists': true}});
+```
+result
+```
+{
+    name: {
+        actualValue: 'testr',
+        _exists: { passed: true, validationValue: true }
+    }
+}
+```
+### _isType
+### _startsWith
+### _contains
+### _lessThan
+### _greaterThan
+### _equals
+### _matchesRegexPattern
+### _arrayContains
+### _arrayContainsObjectWithProperties
+### _validateArrayObjectElement
 ```
 
 example usage is in the test directory for now
